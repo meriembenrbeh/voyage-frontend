@@ -1,0 +1,75 @@
+<style>
+  .card {
+    background-color: #343a40;
+    color: white;
+    animation: fadeInUp 1s ease;
+  }
+  
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 50%, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+  </style>
+  
+  <div class="row mt-3 justify-content-center">
+    <div class="col-md-4">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <i class="fa fa-check-square text-info"></i>
+          <h5 class="card-title">Sellers</h5>
+          <p>{{ sellersCount }}</p>
+        </div>
+      </div>
+    </div>
+  
+    <div class="col-md-4">
+      <div class="card bg-dark text-white">
+        <div class="card-body">
+          <i class="fa fa-heart text-success"></i>
+          <h5 class="card-title">Users</h5>
+          <p>{{ usersCount }}</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  
+
+
+  <div class="chart-wrapper bar-chart">
+    <h5 class="card-title chart-title">Produits les plus chers</h5>
+
+     
+        <canvas baseChart
+          [datasets]="barChartData"
+          [labels]="barChartLabels"
+          [options]="barChartOptions"
+          [legend]="barChartLegend"
+          [plugins]="barChartPlugins"
+          [chartType]="barChartType">
+        </canvas>
+      </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  

@@ -1,0 +1,53 @@
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-6 offset-lg-3">
+            <div  class="login-form">
+                <br>
+                <h2 >Update Product</h2>
+
+                <form #updateProduct="ngForm" (ngSubmit)="updateProd(updateProduct.value)" class="common-form">
+                    <div class="group-input">
+                        <label for="username">Product Name *</label>
+                        <input class="form-input" ngModel="{{productData?.name}}" type="text" name="name" placeholder="Product Name">
+                    </div>
+
+                    <div class="group-input">
+                        <label for="username">Product Price *</label>
+                        <input class="form-input" ngModel="{{productData?.price}}" type="text" name="price" placeholder="Product Price">
+                    </div>
+
+                    <div class="group-input">
+                        <label for="username">Product Color *</label>
+                        <input class="form-input" ngModel="{{productData?.color}}" type="text" name="color" placeholder="Product Color">
+                    </div>
+
+                    <div class="group-input">
+                        <label for="username">Product Category *</label>
+                        <input class="form-input" ngModel="{{productData?.category}}" type="text" name="category" placeholder="Product Category">
+                    </div>
+
+                    <div class="group-input">
+                        <label for="username">Product Name *</label>
+                        <textarea class="form-input" ngModel="{{productData?.description}}" type="text" name="description" placeholder="Product Description"></textarea>
+                    </div>
+
+                    <div class="group-input">
+                        <label for="username">Product Image URL *</label>
+                        <input class="form-input" ngModel="{{productData?.image}}" type="text" name="image" placeholder="Product Image URL">
+                    </div>
+
+                    <button class="site-btn login-btn" >Update Product</button>
+                </form>
+                <br>
+                <br>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

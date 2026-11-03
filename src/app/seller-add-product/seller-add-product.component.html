@@ -1,0 +1,46 @@
+<!-- Register Section Begin -->
+<div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="login-form">
+                    <h2 class="animated fadeInDown">Add New Product</h2>
+                    <form #addProductForm="ngForm" (ngSubmit)="addNewProduct(addProductForm.value)" class="common-form">
+                        <div class="group-input">
+                            <label for="username" class="animated slideInLeft">Product Name </label>
+                            <input class="form-input animated slideInRight" ngModel type="text" name="name" placeholder="Product Name">
+                        </div>
+                        <div class="group-input">
+                            <label for="username" class="animated slideInLeft">Product Price </label>
+                            <input class="form-input animated slideInRight" ngModel type="text" name="price" placeholder="Product Price">
+                        </div>
+                        <div class="group-input">
+                            <label for="username" class="animated slideInLeft">Product Color </label>
+                            <input class="form-input animated slideInRight" ngModel type="text" name="color" placeholder="Product Color">
+                        </div>
+                        <div class="group-input">
+                            <label for="username" class="animated slideInLeft">Product Category </label>
+                            <input class="form-input animated slideInRight" ngModel type="text" name="category" placeholder="Product Category">
+                        </div>
+                        <div class="group-input">
+                            <label for="username" class="animated slideInLeft">Product Description </label>
+                            <textarea class="form-input animated slideInRight" ngModel type="text" name="description" placeholder="Product Description"></textarea>
+
+                        </div>
+                        <div class="group-input">
+                            <label for="username" class="animated slideInLeft">Product Image URL </label>
+                            <input class="form-input animated slideInRight" ngModel type="text" name="image" placeholder="Product Image URL">
+                        </div>
+
+                        <button class="site-btn login-btn animated fadeInUp" >Add Product</button>
+<p *ngIf="addProductMessage" class="success-message">{{ addProductMessage }}</p>
+
+                        
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register Form Section End -->

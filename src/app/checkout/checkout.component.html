@@ -1,0 +1,44 @@
+
+<!-- Register Form Section End -->
+
+
+<div class="checkout">
+  <p class="message-p">{{orderMsg}}</p>
+  <div class="row">
+
+      <div class="col-sm-7 form-details" style="padding:10px 100px 100px 100px">
+          
+          <div  class="login-form">
+              <br>
+<h3>Fill Your Shipping Details</h3>
+                  <form #orderData="ngForm" (ngSubmit)="orderNow(orderData.value)"  class="common-form">
+                      <div class="group-input">
+                          <label for="username">Username or email address *</label>
+                          <input type="text" name="name" placeholder="Enter your name" class="form-input" ngModel>                            
+                      </div>
+                      <div class="group-input">
+                          <label for="username">Username or email address *</label>
+                          <input type="text" name="email" placeholder="Enter your email" class="form-input" ngModel>                             
+                      </div>
+                      <div class="group-input">
+                          <label for="username">Username or email address *</label>
+                          <input type="text" name="phone" placeholder="Enter phone number" class="form-input" ngModel>                        
+                      </div>
+                      <div class="group-input">
+                          <label for="username">Username or email address *</label>
+                          <input type="text" name="adress" placeholder="Enter your address" class="form-input" ngModel>                            
+                      </div>
+                  
+                  
+                  <button class="site-btn login-btn">Add Product</button>
+              </form>
+             
+          </div>
+      </div>
+      <div class="col-sm-5">
+          <h2>Checkout</h2>
+          <h3>Total Amount: <b>{{totalPrice | currency:'TND'}}</b> </h3>
+          <h3>Payment Methods: <b>Cash on delivery available</b></h3>
+      </div>
+  </div>
+</div>

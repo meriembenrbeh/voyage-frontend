@@ -1,0 +1,53 @@
+/* Ajouter une animation de défilement aux graphiques */
+.chart-wrapper canvas {
+    animation: fadeInUp 1s ease-out;
+    transform: translateY(20px);
+    animation-delay: 100ms;
+    opacity: 0;
+    
+}
+
+.chart-wrapper .bar-chart canvas {
+    animation: animateBarChart 2s ease-out;
+    transform: translateY(20px);
+    animation-delay: 100ms;
+    opacity: 0;
+}
+
+.chart-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+  }
+  
+  
+/* Ajouter une animation de rotation progressive aux graphiques à secteurs */
+.chart-wrapper .pie-chart canvas {
+    animation: animatePieChart 2s ease-out;
+    transform: rotate(-90deg) scale(0.5);
+    animation-delay: 100ms;
+    opacity: 0;
+}
+
+/* Définir les animations personnalisées */
+@keyframes fadeInUp {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes animateBarChart {
+    0% { transform: translateY(20px); opacity: 0; }
+    100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes animatePieChart {
+    0% { transform: rotate(-90deg) scale(0.5); opacity: 0; }
+    100% { transform: rotate(0) scale(1); opacity: 1; }
+}
+
+/* Assurez-vous que les graphiques sont toujours visibles après l'animation */
+.chart-wrapper canvas.chartjs-render-monitor {
+    opacity: 1;
+    transform: translateY(0);
+}

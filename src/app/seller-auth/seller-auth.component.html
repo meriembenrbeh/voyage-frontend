@@ -1,0 +1,98 @@
+<!-- Register Section Begin -->
+<div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div *ngIf="showLogin" class="login-form">
+                    <h2>Login</h2>
+                   
+                        <form #sellerLogin="ngForm" (ngSubmit)="login(sellerLogin.value)" class="common-form">
+                            <div class="group-input">
+                                <label for="username">Username or email address *</label>
+                                <input class="form-input" type="text" name="email" placeholder="Enter email" ngModel #email="ngModel" required email>
+                                <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please enter valid password</span></p>
+                               
+                            </div>
+                            <div class="group-input">
+                                <label for="pass">Password *</label>
+                                <input class="form-input" type="password" name="password" placeholder="Enter password" ngModel #password="ngModel" minlength="4" maxlength="20" required>
+                                <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Enter valid password</span></p>
+                                
+                            </div>
+                        
+                        <div class="group-input gi-check">
+                            <div class="gi-more">
+                                <label for="save-pass">
+                                    Save Password
+                                    <input type="checkbox" id="save-pass">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <a href="#" class="forget-pass">Forget your Password</a>
+                            </div>
+                        </div>
+                        <button class="site-btn login-btn" [disabled]="sellerLogin.invalid">Login</button>
+                    </form>
+                    <div class="switch-login">
+                        <a  class="or-login" (click)="openSignUp()">Or Create An Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Register Form Section End -->
+
+
+<!-- Register Section Begin -->
+<div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div *ngIf="!showLogin" class="login-form">
+                    <h2>sing up</h2>
+                   
+                        <form  #sellerSignUp="ngForm" (ngSubmit)="signUp(sellerSignUp.value)" class="common-form">
+                            <div class="group-input">
+                                <label for="username">Usernames *</label>
+                                <input class="form-input" ngModel type="text" name="name" placeholder="Enter name" #name="ngModel" required>
+                                <p class="invalid-input"><span *ngIf="name.invalid && name.touched" >Please enter name</span></p>
+                            </div>
+                            <div class="group-input">
+                                <label for="username">Username or email address *</label>
+                                <input class="form-input" ngModel type="text" name="email" placeholder="Enter email" #email="ngModel" required email>
+                                <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Enter valid email</span></p>
+                               
+                            </div>
+                            <div class="group-input">
+                                <label for="username">Password * *</label>
+                                <input class="form-input" ngModel type="password" name="password" placeholder="Enter password" #password="ngModel" required minlength="4" maxlength="20" >
+                                <p><span *ngIf="password.invalid && password.touched">Enter valid password</span></p>
+                            </div>
+                            
+                        
+                        <div class="group-input gi-check">
+                            <div class="gi-more">
+                                <label for="save-pass">
+                                    Save Password
+                                    <input type="checkbox" id="save-pass">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <a href="#" class="forget-pass">Forget your Password</a>
+                            </div>
+                        </div>
+                        <button class="site-btn login-btn" >Login</button>
+                    </form>
+                    <div class="switch-login">
+                        <a  class="or-login" (click)="openLogin()">Or Create An Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+

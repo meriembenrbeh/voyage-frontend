@@ -1,0 +1,34 @@
+.user-auth h2{
+    margin-top: 50px;
+    margin-bottom: 50px;
+    color: white;
+    text-align: center;
+    animation: color-change 2s infinite;
+}
+
+.user-auth a{
+    font-size: 18px;
+    color: white;
+    animation: slide-in-left 1s ease-in-out;
+}
+
+@keyframes color-change {
+    0% {
+        color: white;
+    }
+    50% {
+        color: blue;
+    }
+    100% {
+        color: white;
+    }
+}
+
+@keyframes slide-in-left {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}

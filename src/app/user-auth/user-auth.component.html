@@ -1,0 +1,104 @@
+<!-- Register Section Begin -->
+<div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div *ngIf="showLogin" class="login-form">
+                    <h2>User Login</h2>
+
+                    <form #userLogin="ngForm" (ngSubmit)="login(userLogin.value)" class="common-form">
+                        <div class="group-input">
+                            <label for="username">Username or email address *</label>
+                            <input class="form-input" ngModel type="text" name="email" placeholder="Enter email"
+                                #email="ngModel" email required>
+                            <p class="invalid-input"><span *ngIf="email.invalid && email.touched">Please enter valid
+                                    email</span></p>
+
+                        </div>
+                        <div class="group-input">
+                            <label for="pass">Password *</label>
+                            <input class="form-input" ngModel type="password" name="password"
+                                placeholder="Enter password" #password="ngModel" minlength="2" maxlength="20" required>
+                            <p class="invalid-input"><span *ngIf="password.invalid && password.touched">Please enter
+                                    valid password</span></p>
+
+                        </div>
+
+                        <div class="group-input gi-check">
+                            <div class="gi-more">
+                                <label for="save-pass">
+                                    Save Password
+                                    <input type="checkbox" id="save-pass">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <a href="#" class="forget-pass">Forget your Password</a>
+                            </div>
+                        </div>
+                        <button class="site-btn login-btn" [disabled]="userLogin.invalid">Login</button>
+                    </form>
+                    <div class="row mt-2">
+                        <a (click)="signInWithGoogle()" style="text-decoration: none;cursor: pointer;">
+                            <div class="card shadow text-center">
+                                <div class="card-body">
+                                    <img src="../../../assets/icons8-google-48.png" alt="" height="24px" width="24px"> Sign In with Google
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="switch-login">
+                        <a class="or-login" (click)="openSignUp()">Or Create An Account</a>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+</div>
+<!-- Register Form Section End -->
+
+<!-- Register Section Begin -->
+<div class="register-login-section spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div *ngIf="!showLogin" class="login-form">
+                    <h2>Sign up</h2>
+
+                    <form #userSignUp="ngForm" (ngSubmit)="signUp(userSignUp.value)" class="common-form">
+                        <div class="group-input">
+                            <label for="username">Usernames *</label>
+                            <input class="form-input" ngModel type="text" name="name" placeholder="Enter username">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">Username or email address *</label>
+                            <input class="form-input" ngModel type="text" name="email" placeholder="Enter user email">
+                        </div>
+                        <div class="group-input">
+                            <label for="username">Password * *</label>
+                            <input class="form-input" ngModel type="password" name="password"
+                                placeholder="Enter password">
+
+                        </div>
+
+
+                        <div class="group-input gi-check">
+                            <div class="gi-more">
+                                <label for="save-pass">
+                                    Save Password
+                                    <input type="checkbox" id="save-pass">
+                                    <span class="checkmark"></span>
+                                </label>
+                                <a href="#" class="forget-pass">Forget your Password</a>
+                            </div>
+                        </div>
+                        <button class="site-btn login-btn" >Login</button>
+                    </form>
+                    <div class="switch-login">
+                        <a class="or-login" (click)="openLogin()">Or Create An Account</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
